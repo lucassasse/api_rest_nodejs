@@ -9,6 +9,7 @@ const productRoutes = require('./routes/products');
 const orderRoutes = require('./routes/orders');
 
 app.use(morgan('dev'));
+app.use('/uploads', express.static('uploads')); //torna a pasta uploads pública
 app.use(bodyParser.urlencoded({extended: false})); //aceita apenas dados simples
 app.use(bodyParser.json()); //aceita apenas json de entrada no body
 
