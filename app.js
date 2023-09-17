@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 
 const productRoutes = require('./routes/products');
 const orderRoutes = require('./routes/orders');
+const userRoutes = require('./routes/users');
 
 app.use(morgan('dev'));
 app.use('/uploads', express.static('uploads')); //torna a pasta uploads pública
@@ -27,6 +28,7 @@ app.use((req, res, next) => {
 
 app.use('/products', productRoutes);
 app.use('/orders', orderRoutes);
+app.use('/users', userRoutes);
 
 app.use((req, res, next) => {
 	const error = new Error('Route Not found');
